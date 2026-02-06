@@ -16,7 +16,6 @@ description: Code review checklist for MindSpore op_plugin merges. Use when revi
 - Ensure there are no Chinese comments in code.
 - Ensure copyright year is 2026.
 - Do not use try/except to skip unsupported cases.
-- Do not set a fixed NumPy random seed in test files (e.g., `np.random.seed(42)`).
 
 ## Functional Test Baseline Requirements
 - Use `level_mark='level1'` for vmap cases, `level_mark='level0'` for others.
