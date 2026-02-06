@@ -17,6 +17,11 @@ description: Code review checklist for MindSpore op_plugin merges. Use when revi
 - Ensure copyright year is 2026.
 - Do not use try/except to skip unsupported cases.
 
+## Kernel .cc Review Rules
+- When reviewing `kernel/*.cc`, confirm the called ATen operator under ` mindspore_op_plugin/third_party/libtorch/include/ATen `; if the same-named ATen operator has an `_out` variant, prefer the `_out` variant.
+- Do not add unnecessary validations.
+- Do not add unnecessary forced type casts (for example, `.to()`).
+
 ## Functional Test Baseline Requirements
 - Use `level_mark='level1'` for vmap cases, `level_mark='level0'` for others.
 - Decorator template: `@arg_mark(plat_marks=['cpu_linux'], level_mark='level0', card_mark='onecard', essential_mark='essential')`
